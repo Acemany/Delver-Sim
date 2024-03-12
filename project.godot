@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/HubMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalPlayerCode="*res://Scripts/GlobalPlayerCode.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-box2d/plugin.cfg")

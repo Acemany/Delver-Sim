@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds4n16h266aak"
-path="res://.godot/imported/FOOD.png-fb29c235aeb5476977311c35882a94d8.ctex"
+uid="uid://drv6lr5yqs0gs"
+path="res://.godot/imported/money.png-084ebaf65b7dc629aa1ad9cfd55a315e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Things/FOOD.png"
-dest_files=["res://.godot/imported/FOOD.png-fb29c235aeb5476977311c35882a94d8.ctex"]
+source_file="res://Sprites/Things/money.png"
+dest_files=["res://.godot/imported/money.png-084ebaf65b7dc629aa1ad9cfd55a315e.ctex"]
 
 [params]
 

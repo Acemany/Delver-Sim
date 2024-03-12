@@ -11,14 +11,15 @@ def save_path(path: Path):
     load_len = len(files)
     for f in files:
         load_progress += 1
-        print(f"Compressing file {load_progress}/{load_len} \"{f}\"")
+        print(f"Compressing file {load_progress}/{load_len} \"{path/f}\"")
         # if f.split(".")[-1].lower() in ["bmp", "gif", "jpg", "jpeg", "lbm", "pbm", "pgm", "ppm", "pcx", "png", "pnm", "svg", "tga", "tif", "tiff", "webp", "xpm"]
         try:
-            image.save(image.load(f), f)
+            image.save(image.load(path/f), path/f)
         except error as e:
-            print(f"Warning, \"{f}\" is not an image. Error:\n", e)
+            print(f"Warning, \"{path/f}\" is not an image. Error:\n", e)
         except Exception as e:
             print("Error occured while compressing file:\n", e)
+            raise e
             while 1:
                 pass
     assert len(files) == load_progress
@@ -26,11 +27,15 @@ def save_path(path: Path):
 
 def compress_args():
     for i in argv[1:]:
-        image.save(image.load(i), f"{i}.png")
+        image.save(image.load(i).convert(), f"{i}_c.png")
 
+
+gamedir = Path(__file__).parent.parent
 
 init()
 display.set_mode()
-
-save_path(Path(__file__).parent)
+if len(argv) >= 2:
+    compress_args()
+else:
+    save_path(gamedir/"Sprites\Things")
 quit()

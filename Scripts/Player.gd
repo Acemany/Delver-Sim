@@ -3,10 +3,15 @@ extends CharacterBody2D
 @export var SPEED = 150.0
 @export var MAX_SPEED = 200.0
 
-@onready var label = $Label
+@onready var label_money = $CanvasLayer/Control/Label
+@onready var button_up = $CanvasLayer/Control/ButtonUp
+@onready var button_down = $CanvasLayer/Control/ButtonDown
+@onready var button_left = $CanvasLayer/Control/ButtonLeft
+@onready var button_right = $CanvasLayer/Control/ButtonRight
 @onready var sprite_animated = $SpriteAnimated
 
 var direction: Vector2
+var button_direction: Vector2
 var prev_angl: int
 var angl: int = 5
 enum ANGLES {RIGHT, DOWN, LEFT, UP}
@@ -15,8 +20,12 @@ func _ready():
 	$ShapeView.polygon = $ShapeCollision.polygon
 	update_sprite()
 
-func _process(delta):
-	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+func _process(delta: float):
+	button_direction = Vector2(int(button_right.is_pressed())-int(button_left.is_pressed()), int(button_down.is_pressed())-int(button_up.is_pressed()))
+	if button_direction == Vector2.ZERO:
+		direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	else:
+		direction = button_direction
 	if direction:
 		velocity = velocity.move_toward(MAX_SPEED*direction, SPEED*delta*16)
 	if direction == Vector2.ZERO:
@@ -38,8 +47,6 @@ func update_sprite(dir: Vector2 = Vector2.ZERO):
 
 	if prev_angl != angl:
 		angl = prev_angl
-		label.text = str(angl)
-		
 		sprite_animated.flip_h = angl <= 1
 	sprite_animated.play("%s%s" % ["Idle" if dir == Vector2.ZERO else "Run",
 								   "Side" if not angl % 2 else
