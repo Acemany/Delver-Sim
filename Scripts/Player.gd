@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var SPEED = 150.0
-@export var MAX_SPEED = 200.0
+@export var SPEED = 75.0
+@export var MAX_SPEED = 100.0
 
-@onready var label_money = $CanvasLayer/Control/Label
+@onready var label_money = $CanvasLayer/Control/LabelMoney
 @onready var button_up = $CanvasLayer/Control/ButtonUp
 @onready var button_down = $CanvasLayer/Control/ButtonDown
 @onready var button_left = $CanvasLayer/Control/ButtonLeft
@@ -41,13 +41,14 @@ func _input(event: InputEvent):
 
 func update_sprite(dir: Vector2 = Vector2.ZERO):
 	prev_angl = int(fmod(((get_global_mouse_position()-global_position).angle()/PI*2+4.5), 4))\
-				if dir == Vector2.ZERO else 0 if dir.x > 0 else \
-											2 if dir.x < 0 else \
-											1 if dir.y > 0 else 3
+				if dir == Vector2.ZERO else\
+				ANGLES.RIGHT if dir.x > 0 else ANGLES.LEFT\
+				if dir.x < 0 else\
+				ANGLES.DOWN if dir.y > 0 else ANGLES.UP
 
 	if prev_angl != angl:
 		angl = prev_angl
-		sprite_animated.flip_h = angl <= 1
 	sprite_animated.play("%s%s" % ["Idle" if dir == Vector2.ZERO else "Run",
-								   "Side" if not angl % 2 else
+								   "Left" if angl == ANGLES.LEFT else
+								   "Right" if angl == ANGLES.RIGHT else
 								   "Up" if angl == ANGLES.UP else "Down"])
