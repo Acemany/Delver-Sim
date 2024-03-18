@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://c7u6etc7d7fqv"]
+[gd_scene load_steps=57 format=3 uid="uid://c7u6etc7d7fqv"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ujf4f"]
 [ext_resource type="Texture2D" uid="uid://b31glqgdntvaa" path="res://icon.svg" id="2_myxi8"]
@@ -300,7 +300,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_dumam")
 }],
 "loop": false,
-"name": &"PickUp",
+"name": &"Pickup",
 "speed": 5.0
 }, {
 "frames": [{
@@ -400,18 +400,17 @@ animations = [{
 atlas = ExtResource("4_cghpw")
 region = Rect2(32, 0.135, 32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxblc"]
+size = Vector2(11, 11)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_ujf4f")
-
-[node name="ShapeCollision" type="CollisionPolygon2D" parent="."]
-position = Vector2(-2, 13)
-polygon = PackedVector2Array(11, -43, -6, -43, -6, -13, 11, -13)
 
 [node name="SpriteAnimated" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_5e6vq")
-animation = &"RunRight"
+animation = &"Pickup"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -466,3 +465,7 @@ texture_normal = ExtResource("2_myxi8")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -12)
 zoom = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -5.5)
+shape = SubResource("RectangleShape2D_kxblc")

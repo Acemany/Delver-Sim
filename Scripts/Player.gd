@@ -17,7 +17,6 @@ var angl: int = 5
 enum ANGLES {RIGHT, DOWN, LEFT, UP}
 
 func _ready():
-	$ShapeView.polygon = $ShapeCollision.polygon
 	update_sprite()
 
 func _process(delta: float):
