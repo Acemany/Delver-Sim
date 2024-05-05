@@ -1,11 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://nckurxsnmot4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08mx1"]
-atlas = null
 region = Rect2(0, 0, 95, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1kgn"]
-atlas = null
 region = Rect2(0, 39, 95, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qe8m"]
