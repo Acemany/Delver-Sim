@@ -21,7 +21,7 @@ GlobalPlayerCode="*res://Scripts/GlobalPlayerCode.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-box2d/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
@@ -60,7 +60,7 @@ ui_down={
 
 [physics]
 
-2d/physics_engine="Box2D"
+2d/physics_engine="Rapier2D"
 
 [rendering]
 
