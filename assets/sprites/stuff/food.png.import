@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgrw51o64rnha"
-path="res://.godot/imported/TilemapGame.png-4845e9628fef436127155853b37231cb.ctex"
+uid="uid://bogegetum44xs"
+path="res://.godot/imported/food.png-0bcc284d00312635a3985cb278948cf1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilemaps/TilemapGame.png"
-dest_files=["res://.godot/imported/TilemapGame.png-4845e9628fef436127155853b37231cb.ctex"]
+source_file="res://assets/sprites/stuff/food.png"
+dest_files=["res://.godot/imported/food.png-0bcc284d00312635a3985cb278948cf1.ctex"]
 
 [params]
 

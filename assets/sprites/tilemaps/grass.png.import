@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1h27x0ejsxbt"
-path="res://.godot/imported/TilemapCastle.png-ca643cbe1748c317abf137813fe6203e.ctex"
+uid="uid://dmetp4f3xeh1"
+path="res://.godot/imported/grass.png-ea4aaee4aa5c696d784c2cb9d24d68d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilemaps/TilemapCastle.png"
-dest_files=["res://.godot/imported/TilemapCastle.png-ca643cbe1748c317abf137813fe6203e.ctex"]
+source_file="res://assets/sprites/tilemaps/grass.png"
+dest_files=["res://.godot/imported/grass.png-ea4aaee4aa5c696d784c2cb9d24d68d7.ctex"]
 
 [params]
 

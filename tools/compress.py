@@ -37,5 +37,5 @@ display.set_mode()
 if len(argv) >= 2:
     compress_args()
 else:
-    save_path(gamedir/"Sprites\Things")
+    save_path(gamedir/"assets/sprites")
 quit()

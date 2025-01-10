@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cueq1bnlkme5i"
-path="res://.godot/imported/TilemapThings.png-2a481530387ff656b08b12e797b2bea1.ctex"
+uid="uid://snxec7umenyo"
+path="res://.godot/imported/kuper.png-02dc97be80f3d0a22f1909bf85dcdb1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilemaps/TilemapThings.png"
-dest_files=["res://.godot/imported/TilemapThings.png-2a481530387ff656b08b12e797b2bea1.ctex"]
+source_file="res://assets/sprites/characters/player/kuper.png"
+dest_files=["res://.godot/imported/kuper.png-02dc97be80f3d0a22f1909bf85dcdb1e.ctex"]
 
 [params]
 
