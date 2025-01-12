@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://nckurxsnmot4"]
+[gd_scene load_steps=6 format=3 uid="uid://nckurxsnmot4"]
+
+[ext_resource type="Texture2D" uid="uid://c647kwch8nu66" path="res://assets/sprites/stuff/market.png" id="1_mfjx4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_08mx1"]
+atlas = ExtResource("1_mfjx4")
 region = Rect2(0, 0, 95, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o1kgn"]
+atlas = ExtResource("1_mfjx4")
 region = Rect2(0, 39, 95, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qe8m"]

@@ -202,6 +202,7 @@ atlas = ExtResource("3_j8cnd")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5e6vq"]
+resource_name = "sbermarket"
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -404,6 +405,8 @@ region = Rect2(32, 0.135, 32, 32)
 size = Vector2(11, 11)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
+slide_on_ceiling = false
 script = ExtResource("1_ujf4f")
 
 [node name="SpriteAnimated" type="AnimatedSprite2D" parent="."]

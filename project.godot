@@ -21,7 +21,7 @@ Vars="*res://scripts/vars.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/TileMapDual/plugin.cfg")
 
 [input]
 
