@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED = 75.0
 @export var MAX_SPEED = 100.0
+@export_enum("kuper", "sbermarket") var skin: String = "kuper"
 
 @onready var label_money = $UI/Control/LabelMoney
 @onready var joystick: Joystick = $UI/Control/Joypad
@@ -35,6 +36,10 @@ func _process(delta: float):
 func _input(event: InputEvent):
 	if event.is_action("ui_cancel"):
 		get_tree().quit()
+	if event.is_action("fast_1"):
+		change_skin("kuper")
+	if event.is_action("fast_2"):
+		change_skin("sbermarket")
 
 
 func update_sprite(dir: Vector2 = Vector2.ZERO):
@@ -51,3 +56,8 @@ func update_sprite(dir: Vector2 = Vector2.ZERO):
 									   "Left" if angl == ANGLES.LEFT else
 									   "Right" if angl == ANGLES.RIGHT else
 									   "Up" if angl == ANGLES.UP else "Down"])
+
+
+func change_skin(_skin: String):
+	skin = _skin
+	sprite_animated.sprite_frames = Vars.SKIN_DICT[_skin]
