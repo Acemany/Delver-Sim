@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://dfxunt2jxcl2i"]
+
+[ext_resource type="Texture2D" uid="uid://p8w6a7b8bwr2" path="res://assets/sprites/stuff/money.png" id="1_tsarg"]
+[ext_resource type="PackedScene" uid="uid://btf0iccai10qr" path="res://addons/versatile-mobile-joystick/joystick.tscn" id="2_22pik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0ay1"]
+atlas = ExtResource("1_tsarg")
+region = Rect2(32, 0.135, 32, 32)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_safqi"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_gd17n"]
+mesh = SubResource("CylinderMesh_safqi")
+
+[sub_resource type="SphereMesh" id="SphereMesh_sg4mg"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_p2dja"]
+mesh = SubResource("SphereMesh_sg4mg")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o7v50"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2wex4"]
+radius = 150.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tiof5"]
+size = Vector2(80, 80)
+
+[sub_resource type="Curve" id="Curve_brqph"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="LabelMoney" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.003
+anchor_right = 0.069
+anchor_bottom = 0.039
+offset_left = -0.304
+offset_top = 0.056
+offset_right = 0.511993
+offset_bottom = -0.272001
+text = "0"
+horizontal_alignment = 2
+
+[node name="Money" type="Sprite2D" parent="Control"]
+position = Vector2(96, 16)
+texture = SubResource("AtlasTexture_d0ay1")
+
+[node name="Joypad" parent="Control" instance=ExtResource("2_22pik")]
+position = Vector2(900, 400)
+base_texture = SubResource("MeshTexture_gd17n")
+tip_texture = SubResource("MeshTexture_p2dja")
+deadzone_circle = SubResource("CircleShape2D_o7v50")
+tip_limit_circle = SubResource("CircleShape2D_2wex4")
+touch_detection_region = SubResource("RectangleShape2D_tiof5")
+strength_curve = SubResource("Curve_brqph")
+joystick_mode = 0

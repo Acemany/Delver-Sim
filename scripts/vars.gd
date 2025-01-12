@@ -1,5 +1,6 @@
 extends Node
 
+var money: int = 0
 
 
 func save_game():
